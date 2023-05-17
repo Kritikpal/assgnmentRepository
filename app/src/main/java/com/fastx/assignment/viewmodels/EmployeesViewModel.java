@@ -21,6 +21,7 @@ public class EmployeesViewModel extends ViewModel {
         return employeeRepository.getEmployeeDetails(id);
     }
 
+
     public LiveData<String > getError(){
         return employeeRepository.getErrorMessage();
     }

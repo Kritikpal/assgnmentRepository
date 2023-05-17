@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ import com.fastx.assignment.viewmodels.ViewModelFactory;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Locale;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -46,8 +48,11 @@ public class DetailedActivity extends AppCompatActivity {
         int id = getIntent().getIntExtra("id", 0);
         ApiInterface apiInterface = RetrofitService.getInterface();
         employeeRepository = new EmployeeRepository(apiInterface);
-
         viewModel = new ViewModelProvider(this,new ViewModelFactory(employeeRepository)).get(EmployeesViewModel.class);
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Details");
 
         if (InternetConnectionCheck.isConnected(this)) {
             observeData(id);
@@ -87,4 +92,11 @@ public class DetailedActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
