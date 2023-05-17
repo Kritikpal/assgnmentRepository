@@ -1,4 +1,4 @@
-package com.fastx.assignment;
+package com.fastx.assignment.retrofit;
 
 import com.fastx.assignment.data.Employee;
 import com.fastx.assignment.data.EmployeeList;

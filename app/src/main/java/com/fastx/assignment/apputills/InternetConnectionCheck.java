@@ -1,4 +1,4 @@
-package com.fastx.assignment;
+package com.fastx.assignment.apputills;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

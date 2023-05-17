@@ -1,4 +1,4 @@
-package com.fastx.assignment;
+package com.fastx.assignment.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.fastx.assignment.R;
+import com.fastx.assignment.activities.DetailedActivity;
 import com.fastx.assignment.data.Employee;
 import com.fastx.assignment.data.EmployeeList;
 import com.fastx.assignment.databinding.SampleItemBinding;
